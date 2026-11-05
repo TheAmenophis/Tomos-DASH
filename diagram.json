@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "theamenophis",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 20,
+      "left": 300,
+      "attrs": { "flashSize": "8" }
+    },
+    {
+      "type": "board-ili9341-cap-touch",
+      "id": "lcd1",
+      "top": -327.68,
+      "left": 244.74,
+      "rotate": 90,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:10", "lcd1:CS", "green", [ "h0" ] ],
+    [ "esp:9", "lcd1:D/C", "green", [ "h0" ] ],
+    [ "esp:11", "lcd1:MOSI", "green", [ "h0" ] ],
+    [ "esp:18", "lcd1:SCK", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
